@@ -88,13 +88,11 @@ Train four-fold siamese nets, and each training requires two GPUs. Make sure you
 
 ### Create inference for customized ConvNets siamese nets
 
-Once above trainings are done, find out the best saved weights from each model based on log file, and run inference below to generate the final averaged test-vs-train score matrix 
+Once above trainings are done, find out the best saved weights from each model based on log, and run inference below to generate the final averaged test-vs-train score matrix 
 
 * `python snn_inference_kernel_1024.py --model_weights_1 ../path_to_your_best_weights_1 --model_weights_2 ../path_to_your_best_weights_2 --model_weights_3 ../path_to_your_best_weights_3 --model_weights_4 ../path_to_your_best_weights_4`
 
 ## Part 4 - Ensemble all three models, and apply post processing steps 
-
-Final ensemble of all models with post processing steps to generate final submit
 
 1) Check to make sure all three models are generated inside `../features/`, then run: 
 * `python final_ensemble_with_post_proc.py`
