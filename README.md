@@ -77,7 +77,7 @@ As result we will have 4 files with prediction matrices, which will be used for 
 ### Create kfold splits 
 * `python kfold_splits_for_kernel.py`
 
-### Kerenl siamese net training
+### Train Siamese Nets with k-fold approach 
 
 Train four-fold siamese nets, and each training requires two GPUs. Make sure you have enough GPUs (8) to run all four model training parallelly. Otherwise, run in sequence four times
 
