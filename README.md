@@ -1,9 +1,11 @@
-# 5th place winning solution for Humpback Whale identification challenge Using Siamese Nets
+# Humpback Whale identification Using Siamese Nets
 
-## Requirements:
+Code for 5th place winning solution
+
+## Requirements
+
 Hardware: GPU NVIDIA 1080 Ti
 Software: Python 3.6, keras==2.2.1, keras-retinanet==0.5.0, albumentations, pyvips, scipy, numpy, pandas, tqdm, lap, sklearn
-
 
 ## Part 1 - Bounding box models and Siamese Nets with SE-ResNeXt and DenseNet 121
 
@@ -70,8 +72,6 @@ As result we will have 4 files with prediction matrices, which will be used for 
 `../features/cv-analysis-fs16-LB959-seresnext50-384px-sparse.pkl`
 `../features/cv-analysis-fs16-LB959-seresnext50-384px-sparse-test.pkl`
 
-
-
 ## Part 2 - Kernel Siamese Nets training pipeline below
 
 ### 1) create kfold splits 
@@ -85,7 +85,6 @@ As result we will have 4 files with prediction matrices, which will be used for 
 
 ### 3) After above trainings are done, find out the best saved weights from each model based on log file, and run inference below to generate the final averaged test-vs-train score matrix 
 `python snn_inference_kernel_1024.py --model_weights_1 ../path_to_your_best_weights_1 --model_weights_2 ../path_to_your_best_weights_2 --model_weights_3 ../path_to_your_best_weights_3 --model_weights_4 ../path_to_your_best_weights_4`
-
 
 ## Part 3 - Final ensemble of ALL models with post processing steps to generate final submit
 
