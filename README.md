@@ -5,7 +5,7 @@ Code for 5th place winning solution
 ## Requirements
 
 * Hardware: GPU NVIDIA 1080 Ti
-* Software: Python 3.6, keras==2.2.1, keras-retinanet==0.5.0, albumentations, pyvips, scipy, numpy, pandas, tqdm, lap, sklearn
+* Software: Python 3.6, keras==2.2.4, keras-retinanet==0.5.0, albumentations, pyvips, scipy, numpy, pandas, tqdm, lap, sklearn
 
 ## Input data location
 
