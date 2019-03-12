@@ -1,9 +1,11 @@
-# 5th place winning solution for Humpback Whale identification challenge Using Siamese Nets
+# Humpback whale re-identification using Siamese neural nets
 
-## Requirements:
-Hardware: GPU NVIDIA 1080 Ti
-Software: Python 3.6, keras==2.2.1, keras-retinanet==0.5.0, albumentations, pyvips, scipy, numpy, pandas, tqdm, lap, sklearn
+Code for 5th place winning solution
 
+## Requirements
+
+* Hardware: GPU NVIDIA 1080 Ti
+* Software: Python 3.6, keras==2.2.1, keras-retinanet==0.5.0, albumentations, pyvips, scipy, numpy, pandas, tqdm, lap, sklearn
 
 ## Part 1 - Bounding box models 
 
