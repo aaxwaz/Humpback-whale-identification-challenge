@@ -5,7 +5,7 @@ Hardware: GPU NVIDIA 1080 Ti
 Software: Python 3.6, keras==2.2.1, keras-retinanet==0.5.0, albumentations, pyvips, scipy, numpy, pandas, tqdm, lap, sklearn
 
 
-## Part 1 - Bounding box models and Siamese Nets with SE-ResNeXt and DenseNet 121
+## Part 1 - Bounding box models 
 
 ### Input data location: 
 1) both training and test images should be put inside below folder separately: 
@@ -31,6 +31,8 @@ Requires: `../modified_data/retinanet/cropping_train_v2.csv` - some boxes for pl
 As result we obtain following files:
 `../modified_data/p2bb_averaged_v1.pkl` - boxes for train/test images
 `../modified_data/p2bb_averaged_playground_v1.pkl` - boxes for playground images
+
+## Part 2 - Siamese Nets with densenet and seresnext
 
 #### Generate KFold splits
 6) `python3 r10_create_kfold_split.py`
@@ -72,7 +74,7 @@ As result we will have 4 files with prediction matrices, which will be used for 
 
 
 
-## Part 2 - Kernel Siamese Nets training pipeline below
+## Part 3 - Kernel Siamese Nets training pipeline below
 
 ### 1) create kfold splits 
 `python kfold_splits_for_kernel.py`
@@ -87,10 +89,10 @@ As result we will have 4 files with prediction matrices, which will be used for 
 `python snn_inference_kernel_1024.py --model_weights_1 ../path_to_your_best_weights_1 --model_weights_2 ../path_to_your_best_weights_2 --model_weights_3 ../path_to_your_best_weights_3 --model_weights_4 ../path_to_your_best_weights_4`
 
 
-## Part 3 - Final ensemble of ALL models with post processing steps to generate final submit
+## Part 4 - Final ensemble of ALL models with post processing steps to generate final submit
 
-### 1) Check to make sure all three models are generated inside ../features/, run: 
+### 1) Check to make sure all three models are generated inside ../features/, then run: 
 `python final_ensemble_with_post_proc.py`
 
-### 2) this will generate the output in: 
+### 2) Final submit will be generated in: 
 `../submission/final_submit_with_post_proc.csv`
