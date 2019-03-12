@@ -9,7 +9,7 @@ Code for 5th place winning solution
 
 ## Input data location
 
-1) both training and test images should be put inside below folder separately: 
+1) Both training and test images should be put inside below folder separately: 
 * `../data/train/`
 * `../data/test/`
 
@@ -29,8 +29,8 @@ Code for 5th place winning solution
 5) `python3 retinanet/r32_average_boxes.py`
 
 As result we obtain following files:
-`../modified_data/p2bb_averaged_v1.pkl` - boxes for train/test images
-`../modified_data/p2bb_averaged_playground_v1.pkl` - boxes for playground images
+* `../modified_data/p2bb_averaged_v1.pkl` - boxes for train/test images
+* `../modified_data/p2bb_averaged_playground_v1.pkl` - boxes for playground images
 
 ## Part 2 - Siamese Nets with DenseNet121 and SE-ResNext50
 
@@ -38,8 +38,8 @@ As result we obtain following files:
 6) `python3 r10_create_kfold_split.py`
 
 As result we have 2 files with different KFold splits
-`../modified_data/kfold/new_4_folds_split_train_val_v1.pkl` - kfold split v1 (used by DenseNet121)
-`../modified_data/kfold/new_4_folds_split_train_val_v2.pkl` - kfold split v2 (used by SE-ResNext50)
+* `../modified_data/kfold/new_4_folds_split_train_val_v1.pkl` - kfold split v1 (used by DenseNet121)
+* `../modified_data/kfold/new_4_folds_split_train_val_v2.pkl` - kfold split v2 (used by SE-ResNext50)
 
 ### Part with siamese nets (DenseNet121)
 7) `python3 siamese_net_v5_densenet121/r10_seamese_net_warmstart_from_scratch_224px.py`
@@ -97,7 +97,7 @@ After above trainings are done, find out the best saved weights from each model 
 Final ensemble of all models with post processing steps to generate final submit
 
 1) Check to make sure all three models are generated inside ../features/, then run: 
-`python final_ensemble_with_post_proc.py`
+* `python final_ensemble_with_post_proc.py`
 
 2) Final submit will be generated in: 
-`../submission/final_submit_with_post_proc.csv`
+* `../submission/final_submit_with_post_proc.csv`
