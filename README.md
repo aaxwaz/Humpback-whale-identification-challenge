@@ -72,31 +72,31 @@ As result we will have 4 files with prediction matrices, which will be used for 
 * `../features/cv-analysis-fs16-LB959-seresnext50-384px-sparse.pkl`
 * `../features/cv-analysis-fs16-LB959-seresnext50-384px-sparse-test.pkl`
 
-## Part 3 - Kernel Siamese Nets training pipeline
+## Part 3 - Siamese Nets with customized ConvNets model
 
 ### Create kfold splits 
 * `python kfold_splits_for_kernel.py`
 
 ### Kerenl siamese net training
 
-Train four fold siamese training, each training requiring two GPUs. Make sure you have enough GPUs (8) to run all four model training parallelly. Otherwise, run in sequence four times
+Train four-fold siamese nets, and each training requires two GPUs. Make sure you have enough GPUs (8) to run all four model training parallelly. Otherwise, run in sequence four times
 
 * `python snn_train_kernel_384_to_1024.py --CUDA_VISIBLE_DEVICES 0,1 --RUN_FOLD 0`
 * `python snn_train_kernel_384_to_1024.py --CUDA_VISIBLE_DEVICES 2,3 --RUN_FOLD 1`
 * `python snn_train_kernel_384_to_1024.py --CUDA_VISIBLE_DEVICES 4,5 --RUN_FOLD 2`
 * `python snn_train_kernel_384_to_1024.py --CUDA_VISIBLE_DEVICES 6,7 --RUN_FOLD 3`
 
-### Kernel net inference
+### Create inference for customized ConvNets siamese nets
 
-After above trainings are done, find out the best saved weights from each model based on log file, and run inference below to generate the final averaged test-vs-train score matrix 
+Once above trainings are done, find out the best saved weights from each model based on log file, and run inference below to generate the final averaged test-vs-train score matrix 
 
 * `python snn_inference_kernel_1024.py --model_weights_1 ../path_to_your_best_weights_1 --model_weights_2 ../path_to_your_best_weights_2 --model_weights_3 ../path_to_your_best_weights_3 --model_weights_4 ../path_to_your_best_weights_4`
 
-## Part 4 - Ensemble
+## Part 4 - Ensemble all three models, and apply post processing steps 
 
 Final ensemble of all models with post processing steps to generate final submit
 
-1) Check to make sure all three models are generated inside ../features/, then run: 
+1) Check to make sure all three models are generated inside `../features/`, then run: 
 * `python final_ensemble_with_post_proc.py`
 
 2) Final submit will be generated in: 
