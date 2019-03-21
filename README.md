@@ -1,11 +1,16 @@
 # Humpback whale re-identification using Siamese neural nets
 
-Code for 5th place winning solution
+Code for 5th place winning solution for [Humpback Whale Identification](https://www.kaggle.com/c/humpback-whale-identification) contest
 
 ## Requirements
 
 * Hardware: GPU NVIDIA 1080 Ti
 * Software: Python 3.6, keras==2.2.4, keras-retinanet==0.5.0, albumentations, pyvips, scipy, numpy, pandas, tqdm, lap, sklearn
+
+## Links
+
+* [Detailed method description](https://weiminwang.blog/2019/03/01/whale-identification-5th-place-approach-using-siamese-networks-with-adversarial-training/)
+* [Visualization of predictions](https://www.kaggle.com/c/humpback-whale-identification/discussion/82372)
 
 ## Input data location
 
